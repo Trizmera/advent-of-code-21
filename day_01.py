@@ -1,6 +1,10 @@
-with open('inputs/day_one.txt', 'r') as f:
-    sea_floor_depth = [int(number.strip()) for number in f.readlines()]
 
-depth_increased = sum([1 for i in range(1, len(sea_floor_depth)) if sea_floor_depth[i] > sea_floor_depth[i-1]])
+with open('inputs/day_one.txt', 'r') as readings:
+    depths = [int(number.strip()) for number in readings.readlines()]
 
-print("Number of times the depth increases:", depth_increased)
+increased = sum([1 for i in range(1, len(depths)) if depths[i] > depths[i-1]])
+
+# Answer One
+print("Number of times the depth increases:", increased)
+
+increased = sum([1 for i in range(3, len(depths)) if depths[i] > depths[i-3]])
